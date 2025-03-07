@@ -1,0 +1,49 @@
+body{
+    background-color: #88b669ef;
+}
+h1{
+    background-color: rgb(99, 157, 245);
+    border-radius: 10px;
+    width:fit-content;
+    text-align: center;
+    padding: 2px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.nivel1, .nivel2{
+    list-style: none;
+    padding-left: 0px;
+    justify-content: center;
+}
+.centrar {
+    text-align: center;
+    background-color: rgb(99, 157, 245);
+    border-radius: 10px;
+    margin: 20% auto;
+    padding: 20px;
+    width: 50%;
+}
+.nivel2{
+    display: none;
+    text-align: justify;
+    padding-top: 45px;
+}
+.nivel1 > li{
+    display: inline-block;
+}
+.nivel1 li:hover > .nivel2{
+    display: block; /* Para que se vea */
+    position: absolute; /*Para que floten*/
+    z-index: 10; /* Orden en que debe aparecer */
+}
+.asignaturas {
+    padding: 0 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: 1  #333;
+    font-weight: bold;
+}

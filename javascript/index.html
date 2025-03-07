@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saludo(){
+            let nombre = prompt('¿Cómo te llamas?');
+           /* if(nombre != null){
+                alert('Buenas tardes, ' + nombre);
+            } else {
+                alert('eres ptj mano?');
+            }*/
+            document.getElementById('encabezado').innerHTML = 'Te doy la bienvenida, ' + nombre + '.';
+        }
+        function fondo(elcolor){
+            document.getElementById('encabezado').style.backgroundColor = elcolor;
+        }
+        function cambiaFoto(foto){
+            document.getElementById('lafoto').src = 'img/' + foto;
+        }
+
+    </script>
+</head>
+<body onLoad="saludo();">
+   <h1 id="encabezado">MAMAHUEVASO</h1>
+   <input type="button" value="Rojo" onMouseUp="fondo('#F00');">
+   <input type="button" value="Azul" onMouseUp="fondo('#00F');">
+   <input type="button" value="Naranja" onMouseUp="fondo('#Ff8000');">
+   <div id="marco">
+    <img src="" alt="Imagen" width="450" id="lafoto">
+   </div>
+   <input type="button" value="Foto1" onMouseUp="cambiaFoto('foto1.jpg');">
+   <input type="button" value="Foto2" onMouseUp="cambiaFoto('foto2.jpg');">
+   <input type="button" value="Foto3" onMouseUp="cambiaFoto('foto3.jpg');">
+</body>
+</html>

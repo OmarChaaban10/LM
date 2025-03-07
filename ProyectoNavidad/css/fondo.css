@@ -1,0 +1,19 @@
+body{
+    height: 90px;
+    background-color: gray;
+    background-image: url('../img/background-4032775_1280.png');
+    background-size: cover;
+}
+img{
+    width: 100%;
+}
+main{
+    display: flex;
+}
+.cajaflex{
+  flex: 1;
+
+}
+.cajaflex_grande{
+    flex: 4;
+}
