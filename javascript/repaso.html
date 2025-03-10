@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+    <style>
+        img{
+            width: 90%;
+        }
+        #lienzo{ /* id es con # */
+            width: 60%;
+            margin: auto; /* margin: auto;  necesita el width para que le dé un ancho especifico*/
+            
+        }
+        .cajacentrada{
+            text-align: center; /* Las imagenes se comportan como letras y se pueden alinear en el centro así */
+        }
+    </style>
+   
+</head>
+<body>
+     <div id="lienzo" class="cajacentrada">
+        <img src="/img/foto1.jpg" alt="foto" id="lafoto">
+     </div>
+     <div class="cajacentrada">
+        <input type="button" id="b_patras" value="patras">
+        <input type="button" id="b_palante" value="palante">
+     </div> 
+
+     <Script>
+        document.addEventListener('DOMContentLoaded', function(){
+          let imagenes = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'];
+          let puntero = 0;
+
+            document.getElementById('b_patras').addEventListener('click', function(){
+                /*if(puntero <= 0){
+                    puntero = imagenes.length -1;
+                } else {
+                    puntero--;
+                }*/
+                
+                puntero = (puntero <= 0) ? imagenes.length -1 : puntero-1; /* if ternario */
+
+                document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
+            });
+
+            document.getElementById('b_palante').addEventListener('click', function(){
+                /*if(puntero <= 0){
+                    puntero = imagenes.length -1;
+                } else {
+                    puntero--;
+                }*/
+                
+                puntero = (puntero >= imagenes.length-1) ? 0 : puntero+1; /* if ternario */
+
+                document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
+            });
+        }); /* document es el body en javascript y esa funcion indica cuando se carga el body */
+    </Script>
+</body>
+</html>
