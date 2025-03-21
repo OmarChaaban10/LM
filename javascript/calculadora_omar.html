@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #teclado, #pantalla, #capatotal{
+            width:60%;
+            margin:auto;
+            text-align: center;
+            display: flex;
+        }
+        #numerico, #digitos{
+            flex: 7;
+        }
+        #operaciones, #operacion{
+            flex: 3;
+        }
+        #digitos, #operacion{
+            font-size: 4em;
+            font-weight:bold;
+
+        }
+
+        #numerico input{
+            width: 30%; 
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+        }
+        #operaciones input, #capatotal input {
+            width: 100%; 
+            height: 60px;
+            margin: 5px;
+            font-size: 40px;
+        }
+
+        input:active{
+            background-color: #FFDD88;
+        }
+    </style>
+</head>
+<body>
+    <div id="pantalla">
+        <div id="digitos"></div>
+        <div id="operacion"></div>
+    </div>
+    <div id="teclado">
+        <div id="numerico"></div>
+        <div id="operaciones">
+            <input type="button" value="+" id="sumar"> 
+            <input type="button" value="-" id="restar"> 
+            <input type="button" value="x" id="multiplicar"> 
+            <input type="button" value="÷" id="dividir"> 
+        </div>
+
+    </div>
+    <div id="capatotal">
+        <input type="button" value="=" id="calcular">
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+       let relleno = '';
+       let numerico = '';
+       let operacion = ['sumar','restar','multiplicar','dividir'];
+         for(i = 9; i >= 0 ; i--){
+              relleno += '<input type="button" value="'+ i +'" id="num'+ i +'">';
+         }
+            document.getElementById('numerico').innerHTML = relleno;
+
+        for(let i = 0; i <= 9 ; i++){
+            document.getElementById('num'+ i).addEventListener('click',function(){
+                numerico += i;
+                document.getElementById('digitos').innerHTML = numerico;
+            });
+        }
+
+        for(let i = 0; i < operacion.length; i++){
+            document.getElementById(operacion[i]).addEventListener('click',function(){
+                document.getElementById('operacion').innerHTML = this.id;
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

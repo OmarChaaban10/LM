@@ -30,52 +30,60 @@
      <div id="lienzo" class="cajacentrada">
         <img src="/img/foto1.jpg" alt="foto" id="lafoto">
      </div>
-     <div id="carrusel" class="cajacentrada"></div>
+     <div id="carrusel" class="cajacentrada"></div> <!-- Contenedor para las miniaturas del carrusel -->
      <div class="cajacentrada">
-        <input type="button" id="b_patras" value="patras">
-        <input type="button" id="b_palante" value="palante">
+         <input type="button" id="b_patras" value="patras"> <!-- Botón para ir a la imagen anterior -->
+         <input type="button" id="b_palante" value="palante"> <!-- Botón para ir a la imagen siguiente -->
      </div> 
-
-     <Script>
-        document.addEventListener('DOMContentLoaded', function(){
-          let imagenes = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'];
-          let puntero = 0;
-            let relleno = '';
-          for(let i = 0; i < imagenes.length; i++){
-            relleno += '<img src="img/' + imagenes[i] + '" alt="foto" id="lafoto'+ (i+1) +'">';
-          }
-            document.getElementById('carrusel').innerHTML = relleno;
-
-           for(let i = 0; i < imagenes.length; i++){
-            document.getElementById('lafoto' + (i+1)).addEventListener('click', function(){
-                document.getElementById('lafoto').src = 'img/' + imagenes[i];
-            });
-           }
-
-            document.getElementById('b_patras').addEventListener('click', function(){
-                /*if(puntero <= 0){
-                    puntero = imagenes.length -1;
-                } else {
-                    puntero--;
-                }*/
-                
-                puntero = (puntero <= 0) ? imagenes.length -1 : puntero-1; /* if ternario */
-
-                document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
-            });
-
-            document.getElementById('b_palante').addEventListener('click', function(){
-                /*if(puntero <= 0){
-                    puntero = imagenes.length -1;
-                } else {
-                    puntero--;
-                }*/
-                
-                puntero = (puntero >= imagenes.length-1) ? 0 : puntero+1; /* if ternario */
-
-                document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
-            });
-        }); /* document es el body en javascript y esa funcion indica cuando se carga el body */
-    </Script>
+     
+     <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             // Array con los nombres de las imágenes que se usarán en el carrusel
+             let imagenes = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'];
+     
+             // Índice que indica la imagen actualmente mostrada
+             let puntero = 0;
+     
+             // Variable para construir dinámicamente el contenido del carrusel
+             let relleno = '';
+     
+             // Generar las miniaturas del carrusel
+             for (let i = 0; i < imagenes.length; i++) { // let es para declarar una variable local
+                 // Crear una etiqueta <img> para cada imagen del array y asignarle un ID único
+                 relleno += '<img src="img/' + imagenes[i] + '" alt="foto" id="lafoto' + (i + 1) + '">';
+             }
+     
+             // Insertar las miniaturas generadas en el contenedor del carrusel
+             document.getElementById('carrusel').innerHTML = relleno;
+     
+             // Agregar eventos a cada miniatura para que al hacer clic cambie la imagen principal
+             for (let i = 0; i < imagenes.length; i++) {
+                 document.getElementById('lafoto' + (i + 1)).addEventListener('click', function() {
+                     // Cambiar la imagen principal al hacer clic en una miniatura
+                     document.getElementById('lafoto').src = 'img/' + imagenes[i];
+                 });
+             }
+     
+             // Evento para el botón "Atrás"
+             document.getElementById('b_patras').addEventListener('click', function() {
+                 // Si el puntero está en la primera imagen, ir a la última
+                 // De lo contrario, retroceder una posición
+                 puntero = (puntero <= 0) ? imagenes.length - 1 : puntero - 1;
+     
+                 // Actualizar la imagen principal con la nueva posición del puntero
+                 document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
+             });
+     
+             // Evento para el botón "Adelante"
+             document.getElementById('b_palante').addEventListener('click', function() {
+                 // Si el puntero está en la última imagen, ir a la primera
+                 // De lo contrario, avanzar una posición
+                 puntero = (puntero >= imagenes.length - 1) ? 0 : puntero + 1;
+     
+                 // Actualizar la imagen principal con la nueva posición del puntero
+                 document.getElementById('lafoto').src = 'img/' + imagenes[puntero];
+             });
+         }); // Fin del evento DOMContentLoaded
+     </script>
 </body>
 </html>
