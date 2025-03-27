@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+    <style>
+        html{
+            background-color:antiquewhite;
+        }
+        img{
+            width: 90%;
+        }
+        #carrusel img{
+            width: 10%;
+            margin: auto;
+        }
+        #cajita{
+            width: 50%;
+            margin: auto;
+        }
+        .cajacentrada{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="cajita" class="cajacentrada">
+        <img src="img/foto1.jpg" alt="foto" id="lafoto">
+    </div>
+    <div id="carrusel" class="cajacentrada"></div>
+    <div id="botones" class="cajacentrada">
+        <input type="button" id="bpatras" value="patras">
+        <input type="button" id="bpalante" value="palante">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+
+            let puntero = 0;
+            let array  = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg'];
+            let relleno = '';
+
+            for(i = 0; i < array.length; i++){
+                relleno += '<img src="img/'+ array[i] +'" alt="foto" id="lafoto'+ i +'">';
+            }
+
+                document.getElementById('carrusel').innerHTML = relleno;
+
+                document.getElementById('bpatras').addEventListener('click', function(){
+
+                    puntero = (puntero <= 0) ? array.length-1 : puntero-1;
+
+                    document.getElementById('lafoto').src = 'img/' + array[puntero];
+
+                });
+                document.getElementById('bpalante').addEventListener('click', function(){
+
+                    puntero = (puntero >= array.length-1) ? 0 : puntero+1;
+
+                    document.getElementById('lafoto').src = 'img/' + array[puntero];
+
+                });
+
+                for(let i = 0; i < array.length; i++){
+                    document.getElementById('lafoto' + i).addEventListener('click', function(){
+
+                        document.getElementById('lafoto').src = 'img/' + array[i];
+                        puntero = i;
+                    })
+                }
+        });
+    </script>
+</body>
+</html>
