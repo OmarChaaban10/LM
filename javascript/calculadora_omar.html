@@ -79,6 +79,7 @@
         for(let i = 0; i < operacion.length; i++){
             document.getElementById(operacion[i]).addEventListener('click',function(){
                 document.getElementById('operacion').innerHTML = this.id;
+                document.getElementById('digitos').innerHTML = '';
             });
         }
     });
