@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Examen Interactivo - MP1665</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 25px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      border-left: 5px solid #007BFF;
+      border-radius: 5px;
+    }
+    .question p {
+      margin: 0 0 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    select {
+      margin-top: 5px;
+    }
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 30px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Examen Interactivo - Unidades 5 y 6 (MP 1665)</h1>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. ¿Cuál de estas herramientas se utiliza para análisis visual de grandes volúmenes de datos?</p>
+      <label><input type="radio" name="q1" value="b"> Tableau</label>
+      <label><input type="radio" name="q1" value="a"> Notepad</label>
+    </div>
+    <div class="question">
+      <p>2. ¿Qué técnica se usa para predecir eventos futuros a partir de datos históricos?</p>
+      <label><input type="radio" name="q2" value="c"> Análisis predictivo</label>
+      <label><input type="radio" name="q2" value="a"> Descriptivo</label>
+    </div>
+    <div class="question">
+      <p>3. ¿Cuál de las siguientes es una herramienta de Big Data?</p>
+      <label><input type="radio" name="q3" value="b"> Apache Spark</label>
+      <label><input type="radio" name="q3" value="a"> Word</label>
+    </div>
+    <div class="question">
+      <p>4. V/F: Las 5 V del Big Data incluyen Valor y Variedad.</p>
+      <label><input type="radio" name="q4" value="v"> Verdadero</label>
+      <label><input type="radio" name="q4" value="f"> Falso</label>
+    </div>
+    <div class="question">
+      <p>5. ¿Qué significa que un objetivo sea SMART?</p>
+      <label><input type="radio" name="q5" value="a"> Que sea específico, medible, alcanzable, relevante y temporal</label>
+      <label><input type="radio" name="q5" value="b"> Que sea fácil y rápido</label>
+    </div>
+    <div class="question">
+      <p>6. ¿Qué tipo de análisis sugiere acciones concretas a partir de datos?</p>
+      <label><input type="radio" name="q6" value="a"> Análisis prescriptivo</label>
+      <label><input type="radio" name="q6" value="b"> Análisis descriptivo</label>
+    </div>
+    <div class="question">
+      <p>7. ¿Cuál es el principal beneficio del almacenamiento por bloques?</p>
+      <label><input type="radio" name="q7" value="a"> Mayor velocidad en accesos aleatorios</label>
+      <label><input type="radio" name="q7" value="b"> Mejor visualización</label>
+    </div>
+    <div class="question">
+      <p>8. V/F: El análisis descriptivo se utiliza para visualizar relaciones entre elementos.</p>
+      <label><input type="radio" name="q8" value="f"> Falso</label>
+      <label><input type="radio" name="q8" value="v"> Verdadero</label>
+    </div>
+    <div class="question">
+      <p>9. ¿Qué lenguaje es ampliamente usado para ciencia de datos?</p>
+      <label><input type="radio" name="q9" value="a"> Python</label>
+      <label><input type="radio" name="q9" value="b"> HTML</label>
+    </div>
+    <div class="question">
+      <p>10. V/F: Power BI es una herramienta para procesamiento de texto.</p>
+      <label><input type="radio" name="q10" value="f"> Falso</label>
+      <label><input type="radio" name="q10" value="v"> Verdadero</label>
+    </div>
+    <div class="question">
+      <p>11. ¿Qué técnica de recolección de datos es cualitativa?</p>
+      <label><input type="radio" name="q11" value="b"> Entrevistas</label>
+      <label><input type="radio" name="q11" value="a"> Encuestas</label>
+    </div>
+    <div class="question">
+      <p>12. V/F: Una buena gestión del cambio ayuda al éxito de la transformación digital.</p>
+      <label><input type="radio" name="q12" value="v"> Verdadero</label>
+      <label><input type="radio" name="q12" value="f"> Falso</label>
+    </div>
+    <div class="question">
+      <p>13. ¿Qué elemento no forma parte de un plan de transformación digital?</p>
+      <label><input type="radio" name="q13" value="c"> Contrato del CEO</label>
+      <label><input type="radio" name="q13" value="a"> Cronograma</label>
+    </div>
+    <div class="question">
+      <p>14. ¿Qué representa un KPI?</p>
+      <label><input type="radio" name="q14" value="a"> Indicador de rendimiento</label>
+      <label><input type="radio" name="q14" value="b"> Tipo de backup</label>
+    </div>
+    <div class="question">
+      <p>15. V/F: Red.es es una organización de apoyo a la digitalización.</p>
+      <label><input type="radio" name="q15" value="v"> Verdadero</label>
+      <label><input type="radio" name="q15" value="f"> Falso</label>
+    </div>
+    <div class="question">
+      <p>16. ¿Cuál es un beneficio directo de digitalizar procesos?</p>
+      <label><input type="radio" name="q16" value="a"> Aumentar eficiencia</label>
+      <label><input type="radio" name="q16" value="b"> Aumentar papel impreso</label>
+    </div>
+    <div class="question">
+      <p>17. ¿Qué entidad ofrece ayudas a pymes en digitalización?</p>
+      <label><input type="radio" name="q17" value="a"> Kit Digital</label>
+      <label><input type="radio" name="q17" value="b"> FIFA</label>
+    </div>
+    <div class="question">
+      <p>18. V/F: Las entrevistas recogen datos cuantitativos.</p>
+      <label><input type="radio" name="q18" value="f"> Falso</label>
+      <label><input type="radio" name="q18" value="v"> Verdadero</label>
+    </div>
+    <div class="question">
+      <p>19. ¿Qué herramienta permite análisis visual interactivo de datos?</p>
+      <label><input type="radio" name="q19" value="a"> Power BI</label>
+      <label><input type="radio" name="q19" value="b"> Paint</label>
+    </div>
+    <div class="question">
+      <p>20. ¿Qué tipo de análisis permite identificar relaciones en redes sociales?</p>
+      <label><input type="radio" name="q20" value="a"> Análisis de redes</label>
+      <label><input type="radio" name="q20" value="b"> Descriptivo</label>
+    </div>
+    <button type="button" class="submit-btn" onclick="corregir()">Corregir</button>
+  </form>
+  <div class="result" id="resultado"></div>
+</div>
+<script>
+function corregir() {
+  const respuestas = {
+    q1: "b", q2: "c", q3: "b", q4: "v", q5: "a", q6: "a", q7: "a",
+    q8: "f", q9: "a", q10: "f", q11: "b", q12: "v", q13: "c", q14: "a",
+    q15: "v", q16: "a", q17: "a", q18: "f", q19: "a", q20: "a"
+  };
+  let correctas = 0;
+  for (let clave in respuestas) {
+    const valor = document.querySelector(`[name="${clave}"]:checked`)?.value;
+    if (valor === respuestas[clave]) correctas++;
+  }
+  document.getElementById("resultado").innerText = `Has acertado ${correctas} de 20 preguntas.`;
+}
+</script>
+</body>
+</html>
