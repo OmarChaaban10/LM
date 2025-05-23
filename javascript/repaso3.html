@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Repaso</title>
     <style>
-        #teclado, #pantalla, #capatotal{
+          #teclado, #pantalla, #capatotal{
             width:60%;
             margin:auto;
             text-align: center;
@@ -39,6 +39,9 @@
         input:active{
             background-color: #FFDD88;
         }
+        html{
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body>
@@ -59,31 +62,39 @@
     <div id="capatotal">
         <input type="button" value="=" id="calcular">
     </div>
-<script>
-    document.addEventListener('DOMContentLoaded',function(){
-       let relleno = '';
-       let numerico = '';
-       let operacion = ['sumar','restar','multiplicar','dividir'];
-       
-         for(i = 9; i >= 0 ; i--){
-              relleno += '<input type="button" value="'+ i +'" id="num'+ i +'">';
-         }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            let relleno = '';
+            let numero1 = '';
+            let numero2 = '';
+            let operaciones = ['sumar', 'restar', 'multiplicar', 'dividir'];
+
+            for(i = 9; i >= 0; i--){
+                relleno += '<input type="button" value="'+ i +'" id="num'+ i +'">';
+            }
             document.getElementById('numerico').innerHTML = relleno;
 
-        for(let i = 0; i <= 9 ; i++){
-            document.getElementById('num'+ i).addEventListener('click',function(){
-                numerico += i;
-                document.getElementById('digitos').innerHTML = numerico;
-            });
-        }
+            for(let i = 0; i <= 9; i++){
+                document.getElementById('num'+i).addEventListener('click', function(){
 
-        for(let i = 0; i < operacion.length; i++){
-            document.getElementById(operacion[i]).addEventListener('click',function(){
-                document.getElementById('operacion').innerHTML = this.id;
-            });
-        }
-    });
-</script>
+                    numero1 += i;
 
+                document.getElementById('digitos').innerHTML = numero1;
+
+                });
+            }
+
+            for(let i = 0; i < operaciones.length; i++){
+                document.getElementById(operaciones[i]).addEventListener('click', function(){
+                    document.getElementById('operacion').innerHTML = this.id;
+
+                });
+            }
+
+
+
+        });
+    </script>
 </body>
 </html>

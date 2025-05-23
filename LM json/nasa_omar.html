@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marte</title>
+</head>
+<body>
+    <script>
+        function cargarJSON(url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                if(xhr.status === 200) {
+                    callback(JSON.parse(xhr.responseText));
+                } else {
+                    document.getElementById("tabla-datos").innerHTML = 
+                        "<p style='color:red'>Error al cargar los datos. Asegúrate de que datos.json existe.</p>";
+                }
+            };
+            xhr.send();
+        }
+
+        function cargarDatos() {
+            cargarJSON('datos.json', crearTabla);
+        }
+    </script>
+</body>
+</html>

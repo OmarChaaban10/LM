@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeje</title>
+    <style>
+        h1 {
+            font-size: 350px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: red;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            display: inline-block;
+            justify-content: center;
+            margin: auto;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+        body {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="cargarDatos()">Cargar Contenido</button>
+    <div id = "contenido"></div>
+
+    <script>
+        let html = "";
+
+        function cargarDatos() {
+            
+            html = "<h1>JAIME MARICÓN</h1>";
+
+            document.getElementById("contenido").innerHTML = html;
+        }
+
+    </script>
+</body>
+</html>

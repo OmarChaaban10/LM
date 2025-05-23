@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hamburguesas_foster>
+    <menu>
+        <combos>
+            <combo precio = "16">
+                <entrante alergenos = "cacahuete">Cacahuetes</entrante>
+                <primer_plato alergenos = "gluten">Hamburguesa de pollo crunchy</primer_plato>
+                <acompaniante>Patatas Fritas</acompañante>
+                <bebida>Coca-Cola</bebida>
+                <ingredientes>
+                    <ingrediente alergenos = "true">Cacahuete</ingrediente>
+                    <ingrediente alergenos = "true">Pan</ingrediente>
+                    <ingrediente>Pollo crunchy</ingrediente>
+                    <ingrediente>Patata</ingrediente>
+                </ingredientes>
+            </combo>
+            <combo precio = "20">
+                <entrante>Cacahuetes</entrante>
+                <primer_plato>Hamburguesa al estilo árabe</primer_plato>
+                <acompaniante>Ensalada con apio</acompañante>
+                <bebida>Nestea</bebida>
+                <ingredientes>
+                    <ingrediente alergenos = "true">Cacahuete</ingrediente>
+                    <ingrediente alergenos = "true">Pan</ingrediente>
+                    <ingrediente>Carne halal</ingrediente>
+                    <ingrediente alergenos = "true">Apio</ingrediente>
+                    <ingrediente>Lechuga</ingrediente>
+                </ingredientes>
+            </combo>
+        </combos>
+        <postres>
+            <postre precio = "1.5">
+                <producto>Helado de vainilla</producto>
+                <ingredientes>
+                    <ingrediente alergenos = "true">Leche</ingrediente>
+                    <ingrediente>Vainilla</ingrediente>
+                </ingredientes>
+            </postre>
+            <postre precio = "2.5">
+                <producto alergenos = "lacteos">banana-Split</producto>
+            </postre>
+        </postres>
+    </menu>
+</hamburguesas_foster>

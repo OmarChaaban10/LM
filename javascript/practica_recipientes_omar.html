@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipientes</title>
+    <style>
+        #principal{
+            text-align: center;
+        }
+        #botones{
+            text-align: center;
+        }
+        
+        #recipientes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+#recipientes div {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(taza.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#recipientes div div {
+    position: absolute;
+    bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    background-image: none;
+}
+
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <div id="recipientes"></div>
+    </div>
+    <div id="botones"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            let taza = '';
+            let botones = '<input type="number" value = "" id = "bnumeros">';
+            let caramelos = [0, 0, 0, 0, 0];
+            for(i = 1; i <= 5; i++){
+                taza += '<div id = "div'+ i +'">Recipiente '+ i +': ' + caramelos[i-1] +' caramelos</div>';
+                botones += '<input type="button" value="Añadir a recipiente '+ i +'" id="boton'+ i +'">'
+            }
+            
+            document.getElementById('recipientes').innerHTML = taza;
+            document.getElementById('botones').innerHTML = botones;
+
+            for(let i = 1; i <= 5; i++){
+                document.getElementById('boton'+ i).addEventListener('click', function(){
+                    let num = parseFloat(document.getElementById('bnumeros').value);
+                    caramelos[i-1] += num;
+                    document.getElementById('div'+ i).innerHTML = 'Recipiente '+ i +': ' + caramelos[i-1] +' caramelos';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
